@@ -1,18 +1,17 @@
-Business dokumentace
+Videohra v CLI: Wordle – Business požadavky
 
-Videohra v CLI: Wordle
-
+	•	SSPŠ
 	•	Verze 1
-	•	Autor: Václav Bohdanecký
-	•	Datum: 17.9.2024
+	•	Václav Bohdanecký
+	•	17.9.2024
 
 Obsah
 
-	1.	Historie dokumentu
+	1.	Historie Dokumentu
 	2.	Úvod
 	3.	Požadavky
 
-Historie dokumentu
+Historie Dokumentu
 
 Verze 1
 
@@ -21,7 +20,7 @@ Verze 1
 
 Úvod
 
-	•	Účel dokumentu: Tento dokument popisuje herní koncept a funkcionality konzolové verze hry inspirované Wordlem. Uvádí jak požadavky na hratelnost, tak technické vlastnosti.
+	•	Účel dokumentu – Účelem dokumentu je popsání všech požadovaných funkcí hry Wordle a nefunkčních požadavků.
 	•	Cílová skupina: Pan učitel programování
 	•	Kontakt: bohdanecky.va.2022@skola.ssps.cz
 	•	Odkazy na další dokumenty: Wordle-CSharp-Funkcni
@@ -33,21 +32,21 @@ Požadavky
 
 Funkční požadavky
 
-	1.	Hráč musí uhodnout 5-písmenné slovo ve stanoveném počtu pokusů.
+	•	Hráč musí uhodnout 5-písmenné slovo ve stanoveném počtu pokusů
 Priorita: Vysoká
-	2.	Hra umožňuje hráči zvolit obtížnost - počet pokusů.
+	•	Hra umožňuje hráči zvolit obtížnost – počet pokusů
 Priorita: Vysoká
-	3.	Po každém pokusu hra vyhodnotí správnost písmen a zvýrazní je barvami: zelená pro správná písmena na správném místě, žlutá pro písmena ve slově na špatném místě, a bílá pro písmena, která ve slově nejsou.
+	•	Po každém pokusu hra poskytuje zpětnou vazbu barevným zobrazením správnosti písmen (zelená – správné písmeno na správném místě, žlutá – správné písmeno na špatném místě, bílá – špatné písmeno)
 Priorita: Vysoká
-	4.	Po správném uhodnutí slova hra nabídne možnost ukončení.
+	•	Po správném uhodnutí slova hra nabídne možnost ukončení
 Priorita: Střední
-	5.	Pokud hráč neuhodne slovo v zadaném počtu pokusů, zobrazí se správné slovo a hra nabídne možnost ukončení.
+	•	Pokud hráč neuhodne slovo v zadaném počtu pokusů, hra zobrazí správné slovo a nabídne možnost ukončení
 Priorita: Střední
-	6.	Hra musí poskytovat jednoduché textové uživatelské rozhraní s barevným výstupem pro zpětnou vazbu na vstup hráče.
+	•	Hra poskytuje jednoduché textové rozhraní s barevným výstupem pro zpětnou vazbu
 Priorita: Střední
 
 Nefunkční požadavky
 
-	1.	CLI Aplikace: Hra bude spuštěna a běžet v příkazovém řádku.
-	2.	Podporovaná zařízení: Hra bude optimalizována pro prostředí .NET a příkazový řádek.
-	3.	Vývojové prostředí: Vývoj probíhá ve Visual Studio 2022 s využitím .NET Frameworku.
+	•	CLI Aplikace - Hra poběží v prostředí příkazového řádku.
+	•	Podporovaná zařízení - Hra bude optimalizována pro .NET prostředí.
+	•	Vývojové prostředí - Aplikace bude vyvíjena v Visual Studio 2022 s využitím .NET Frameworku.
