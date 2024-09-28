@@ -12,3 +12,4 @@
 /Users/jonastenora/code/csharp/wordle/ConsoleApp1/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.pdb
 /Users/jonastenora/code/csharp/wordle/ConsoleApp1/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.genruntimeconfig.cache
 /Users/jonastenora/code/csharp/wordle/ConsoleApp1/ConsoleApp1/obj/Debug/net8.0/ref/ConsoleApp1.dll
+/Users/jonastenora/code/csharp/wordle/ConsoleApp1/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.sourcelink.json
