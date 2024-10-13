@@ -87,6 +87,3 @@ Barevná zpětná vazba umožňuje hráči postupně vylepšovat strategii a log
 - **Neplatné slovo při hádání:** Pokud hráč zadá slovo, které není 5-písmenné nebo není v seznamu platných slov, zobrazí se chybová zpráva a hráč musí hádat znovu.
 - **Neplatný vstup při ukončení hry:** Pokud hráč zadá jiný vstup než `y` nebo `n` při dotazu na ukončení hry, program opakuje dotaz.
 
----
-
-Tato dokumentace obsahuje kompletní popis uživatelského rozhraní, způsobu interakce a řešení chybových stavů, aby poskytovala jasný přehled o fungování hry a očekávaném chování aplikace.
