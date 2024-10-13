@@ -21,7 +21,7 @@
 ---
 
 ## Úvod
-* **Účel dokumentu** – Účelem dokumentu je popsání všech funkcí programu Wordle a nefunkčních požadavků.
+* **Účel dokumentu** – Účelem dokumentu je popsání všech funkcí programu Wordle a funkčních požadavků.
 * **Kontakt:** tenora.jo.2022@skola.ssps.cz
 
 ---
