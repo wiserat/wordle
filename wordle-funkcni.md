@@ -36,27 +36,33 @@
 ## Hlavní obsah aplikace
 
 ### Uživatelské rozhraní
-* Aplikace běží v prostředí příkazového řádku a komunikuje s uživatelem prostřednictvím textových výzev.
-* Základní barvy používané pro zpětnou vazbu jsou:
-  - **Cyan (modrá):** Pro obecné informace a instrukce.
-  - **Red (červená):** Pro chybové zprávy a neplatné vstupy.
-  - **Green (zelená):** Pro správná písmena na správném místě.
-  - **Yellow (žlutá):** Pro správná písmena na špatném místě.
-  - **White (bílá):** Pro písmena, která nejsou ve slově.
+* Aplikace běží v prostředí příkazového řádku a komunikuje s uživatelem prostřednictvím textových výzev. Program používá standardní výstupy pro zobrazení informací a vstupy pro interakci s hráčem.
+* Použité barvy:
+  - **Modrá:** Pro obecné informace a instrukce.
+  - **Červená:** Pro chybové zprávy a neplatné vstupy.
+  - **Zelená:** Pro správná písmena na správném místě.
+  - **Žlutá:** Pro správná písmena na špatném místě.
+  - **Bílá:** Pro písmena, která nejsou ve slově.
 
 ### Herní smyčka
-1. **Výběr obtížnosti:** 
-   - Při spuštění je hráč vyzván, aby zadal počet pokusů pro hru. Program akceptuje pouze kladná čísla.
-   - V případě neplatného vstupu (např. text místo čísla) je zobrazena chybová zpráva a uživatel je vyzván k opětovnému zadání.
-2. **Zadání slova:** 
-   - Hráč zadává 5-písmenné slovo, které je validováno proti seznamu slov v souboru `words.txt`.
-   - Pokud vstup není 5-písmenné slovo nebo není v seznamu, zobrazí se chybová zpráva a hráč je vyzván k opakování vstupu.
-3. **Vyhodnocení slova:** 
-   - Hra porovná vstup hráče s tajným slovem a zobrazí zpětnou vazbu barevným zobrazením správnosti písmen.
-   - Písmena jsou zobrazena v řádcích podle pokusů a každé písmeno má barvu dle zpětné vazby.
-4. **Konec hry:** 
-   - Pokud hráč uhodne slovo, hra zobrazí gratulaci, správné slovo a nabídne možnost ukončení hry.
-   - Pokud hráč neuhodne slovo v zadaném počtu pokusů, hra zobrazí správné slovo a nabídne možnost ukončení.
+1. **Výběr obtížnosti:**
+   - Po spuštění hry je v terminálu hráč vyzván k zadání počtu pokusů, například výpisem textu: `Zadejte počet pokusů pro hru:`. Program čeká na zadání čísla pomocí metody `Console.ReadLine()`.
+   - Pokud uživatel zadá neplatný vstup (např. text nebo záporné číslo), terminál vypíše chybovou zprávu: `Neplatný vstup. Zadejte prosím kladné číslo.` a program znovu čeká na zadání počtu pokusů.
+
+2. **Zadání slova:**
+   - V každém kole se v terminálu vypíše výzva k zadání 5-písmenného slova: `Zadejte 5-písmenné slovo:` a program čeká na vstup hráče pomocí `Console.ReadLine()`.
+   - Pokud je vstup neplatný (např. slovo má jiný počet písmen nebo neexistuje v seznamu), terminál zobrazí chybovou zprávu: `Neplatné slovo, zkuste to znovu.` a hráč musí zadat nové slovo.
+
+3. **Vyhodnocení slova:**
+   - Po zadání slova program porovná jednotlivá písmena hráčova vstupu s tajným slovem. Barevná zpětná vazba je zobrazena na základě výsledku porovnání:
+     - Správná písmena na správných pozicích jsou zobrazena zeleně: `Console.ForegroundColor = ConsoleColor.Green`.
+     - Správná písmena na špatných pozicích jsou zobrazena žlutě: `Console.ForegroundColor = ConsoleColor.Yellow`.
+     - Písmena, která nejsou ve slově, jsou zobrazena bílě: `Console.ForegroundColor = ConsoleColor.White`.
+   - Každé písmeno je vypsáno na obrazovku s odpovídající barvou a výsledek je zobrazen jako řádek textu v terminálu.
+
+4. **Konec hry:**
+   - Pokud hráč správně uhodne slovo, program zobrazí gratulaci: `Gratulujeme! Uhodli jste slovo.` a následně dotaz, zda chce hráč ukončit hru: `Chcete ukončit hru? (y/n)`. Program pak čeká na vstup uživatele (`y` pro ukončení, `n` pro pokračování).
+   - Pokud hráč neuhodne slovo v zadaném počtu pokusů, terminál zobrazí zprávu s tajným slovem: `Bohužel jste neuhodli. Tajné slovo bylo: [tajné slovo].` Následuje dotaz na ukončení hry.
 
 ### Barevná zpětná vazba
 - **Zelená:** Písmeno je na správné pozici.
@@ -64,26 +70,23 @@
 - **Bílá:** Písmeno není ve slově.
 
 ### Náhodné generování slova
-- Slovo je na začátku hry náhodně vybráno ze souboru `words.txt`, který obsahuje seznam platných 5-písmenných slov.
-- Hra používá třídu `Random` pro výběr náhodného slova ze seznamu.
+- Na začátku hry je ze seznamu slov náhodně vybráno slovo pomocí třídy `Random`. Program načte slova ze souboru `words.txt` a vybere jedno slovo, které hráč hádá.
 
 ### Způsob ukončení hry
-- Hra se ukončí po správném uhodnutí slova nebo po vyčerpání všech pokusů.
-- Po každém konci kola se hráč dotázán, zda chce ukončit hru (`y` pro ukončení, `n` pro pokračování).
-- V případě, že hráč zadá jinou odpověď, než je `y` nebo `n`, se zobrazí chybová zpráva a dotaz je opakován.
+- Po skončení každé hry (ať už vítězstvím, nebo prohrou) terminál vypíše dotaz: `Chcete ukončit hru? (y/n)` a čeká na vstup uživatele.
+- V případě neplatného vstupu (např. něco jiného než `y` nebo `n`) se zobrazí chybová zpráva: `Neplatný vstup, prosím zadejte "y" nebo "n".` a dotaz se opakuje, dokud není zadán platný vstup.
 
 ---
 
 ## Účel programu
 
 ### Trénink logiky a slovní zásoby
-Hra je navržena jako zábavný nástroj pro trénink logického myšlení a slovní zásoby hráče.
+Hra je navržena jako nástroj pro trénink logického myšlení a slovní zásoby hráče.
 
 ### Zlepšení strategie
-Barevná zpětná vazba umožňuje hráči postupně vylepšovat strategii a logicky dedukovat správné slovo.
+Barevná zpětná vazba pomáhá hráči postupně vylepšovat strategii a logicky dedukovat správné slovo.
 
 ### Zpětná vazba na chyby
-- **Neplatný vstup při výběru obtížnosti:** Pokud hráč nezadá číslo nebo zadá neplatný počet pokusů (např. `0`), hra zobrazí chybovou zprávu a požádá o opakování.
-- **Neplatné slovo při hádání:** Pokud hráč zadá slovo, které není 5-písmenné nebo není v seznamu platných slov, zobrazí se chybová zpráva a hráč musí hádat znovu.
-- **Neplatný vstup při ukončení hry:** Pokud hráč zadá jiný vstup než `y` nebo `n` při dotazu na ukončení hry, program opakuje dotaz.
-
+- **Neplatný vstup při výběru obtížnosti:** Pokud hráč zadá neplatný počet pokusů (např. text místo čísla nebo záporné číslo), program zobrazí chybovou zprávu a vyzve hráče k novému zadání.
+- **Neplatné slovo při hádání:** Pokud hráč zadá slovo, které nesplňuje požadavky (není 5-písmenné nebo není ve slovníku), terminál zobrazí chybu a požádá o nové slovo.
+- **Neplatný vstup při ukončení hry:** Pokud hráč zadá jiný vstup než `y` nebo `n`, dotaz na ukončení hry se opakuje, dokud není zadán platný vstup.
