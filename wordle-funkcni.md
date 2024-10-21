@@ -1,4 +1,4 @@
-# Videohra v CLI: Wordle – Technické požadavky
+# Videohra v CLI: Wordle – Funkční požadavky
 * **SSPŠ**
 * **Verze 1**
 * **Jonáš Tenora**
