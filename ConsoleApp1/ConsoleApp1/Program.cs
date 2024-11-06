@@ -19,14 +19,17 @@ namespace ConsoleApp1
     class Program
     {
 
-        static void End()
+        static bool End()
         {
+            Console.ResetColor();
+            Console.WriteLine();
             Console.Write("End game? [y/n]: ");
             string input = Console.ReadLine();
             if (input.ToLower() == "y")
             {
                 Environment.Exit(0);
             }
+            return true;
         }
         
         static void Main(string[] args)
@@ -38,7 +41,8 @@ namespace ConsoleApp1
             while (true)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Wordle! 6 tries to guess the word, type a 5-char word".ToUpper());
+                Console.WriteLine();
+                Console.WriteLine("Wordle! Try to guess the word, type a 5-char word".ToUpper());
                 Console.ResetColor();
                 Console.WriteLine();
                 
@@ -68,6 +72,8 @@ namespace ConsoleApp1
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine($"Okay, {numberOfTries} it is. Enjoy the game!");
                 Console.ResetColor();
+                
+                bool won = false;
 
                 for (int i = 0; i < numberOfTries; i++)
                 {
@@ -91,8 +97,13 @@ namespace ConsoleApp1
                             Console.Write("Correctly guessed: ");
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.Write(guess.ToUpper());
-                            End();
+                            won = End();
                         }
+                    }
+
+                    if (won)
+                    {
+                        break;
                     }
 
                     foreach (CharWithColor[] displayWord in words)
@@ -129,6 +140,10 @@ namespace ConsoleApp1
                     words.Add(guessedWord);
 
                     Console.WriteLine();
+                }
+                if (won)
+                {
+                    continue;
                 }
                 Console.ResetColor();
                 Console.WriteLine();
