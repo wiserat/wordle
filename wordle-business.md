@@ -32,16 +32,16 @@
 ## Požadavky
 
 ### Funkční požadavky
-* Hráč musí uhodnout 5-písmenné slovo ve stanoveném počtu pokusů  
- **Priorita:** Vysoká
-* Hra umožňuje hráči zvolit obtížnost – počet pokusů  
- **Priorita:** Střední
-* Po každém pokusu hra poskytuje zpětnou vazbu barevným zobrazením správnosti písmen (zelená – správné písmeno na správném místě, žlutá – správné písmeno na špatném místě, bílá – špatné písmeno)  
- **Priorita:** Vysoká
-* Po správném uhodnutí slova hra nabídne možnost ukončení  
- **Priorita:** Střední
-* Pokud hráč neuhodne slovo v zadaném počtu pokusů, hra zobrazí správné slovo a nabídne možnost ukončení  
- **Priorita:** Vysoká
+1. Hráč musí uhodnout 5-písmenné slovo ve stanoveném počtu pokusů  
+   **Priorita:** Vysoká
+2. Hra umožňuje hráči zvolit obtížnost – počet pokusů  
+   **Priorita:** Střední
+3. Po každém pokusu hra poskytuje zpětnou vazbu barevným zobrazením správnosti písmen (zelená – správné písmeno na správném místě, žlutá – správné písmeno na špatném místě, bílá – špatné písmeno)  
+   **Priorita:** Vysoká
+4. Po správném uhodnutí slova hra nabídne možnost ukončení  
+   **Priorita:** Střední
+5. Pokud hráč neuhodne slovo v zadaném počtu pokusů, hra zobrazí správné slovo a nabídne možnost ukončení  
+   **Priorita:** Vysoká
 
 ### Nefunkční požadavky
 * **CLI Aplikace** - Hra poběží v prostředí příkazového řádku.
