@@ -35,7 +35,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             string[] lines =
-                File.ReadAllLines("/Users/jonastenora/code/csharp/wordle/ConsoleApp1/ConsoleApp1/words.txt");
+                File.ReadAllLines("../../../words.txt");
             Random random = new Random();
             
             while (true)
